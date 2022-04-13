@@ -1,0 +1,262 @@
+/* **********Custom properties********** */
+
+:root{
+    --magenta-dark: rgb(80, 32, 80);
+    --magenta:rgb(147, 123, 146);
+    --magenta-clear: rgb(247, 242, 247);
+    --pink: rgb(238, 104, 164);
+    --white: rgb(255, 255, 255);
+
+    --footer-height: 2.625rem;
+}
+
+/* **********reset********** */
+html{
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* **********Components********** */
+
+
+
+/* ==footer== */
+footer .attribution{
+  width: 100%;
+  padding: .625rem;
+  height: var(--footer-height);
+  font-size: 1rem;
+  text-align: center;
+}
+
+footer .attribution a {
+  color: rgb(62, 82, 163);
+  text-decoration: none;
+}
+
+/* ==stats== */
+
+.stat{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 4.875rem;
+  margin-bottom: 1rem;
+  background-color: var(--magenta-clear);
+  border-radius: .375rem;
+}
+
+.stat:last-child{
+  margin-bottom: 0;
+}
+
+.stats__value{
+  display: flex;
+  justify-content: space-between;
+  height: 1rem;
+  width: 7.375rem;
+}
+
+.stats__legend{
+  font-size: .9375rem;
+  font-weight: 700;
+  color: var(--magenta-dark);
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 48rem) {
+  .stat{
+    height: 3.5rem;
+    width: 80%;
+    flex-direction: row;
+    align-self: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+
+  .stat:first-child{
+    margin-top: 1.25rem;
+    align-self: flex-start;
+  }
+
+  .stat:last-child{
+    margin-bottom: 1.25rem;
+    align-self: flex-end;
+  }
+
+  .stats__value{
+    margin-right: 2rem;
+  }
+}
+
+/* ==tetimonial== */
+
+
+.social-proof{
+  margin: 2rem auto;
+}
+
+.testimonial{
+  margin: 1rem 0;
+  padding: 2rem;
+  border-radius: .375rem;
+  background-color: var(--magenta-dark);
+}
+
+.testimonial__id{
+  height: 3.5rem;
+  padding: .5rem 0;
+  display: flex;
+  margin-bottom: 1.1875rem;
+}
+
+.testimonial__avatar{
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+.testimonial__avatar img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.testimonial__name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .9375rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.testimonial__name p span{
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.testimonial__quote{
+  font-size: .9375rem;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+@media (min-width: 48rem) {
+    .social-proof{
+      grid-column: span 2;
+      width: 100%;
+      display: flex;
+      margin-top: 4.3125rem;
+      justify-content: space-between;
+      min-height: 16.625rem;
+    }
+
+    .testimonial{
+      flex-basis: calc(33% - .9375rem);
+      margin: 0;
+      align-self: center;
+    }
+
+    .testimonial:first-child{
+      align-self: start;
+    }
+
+    .testimonial:last-child{
+      align-self: flex-end;
+    }
+
+    
+}
+
+
+
+/* **********Utilities********* */
+
+/* **********Site styles********** */
+
+body{
+  background-image: 
+      url("../images/bg-pattern-top-mobile.svg"),
+      url("../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: 
+      no-repeat,
+      no-repeat;
+  background-position: top left, bottom right;
+}
+
+.heading{
+  padding: 3.2rem 0;
+}
+
+.heading__header{
+  margin: 1.125rem auto;
+  font-size: 2.375rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: var(--magenta-dark);
+}
+
+.heading__text{
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  text-align: center;
+  color: var(--magenta);
+}
+
+main{
+  padding: 1.5rem;
+  min-height: calc(100vh - var(--footer-height));
+}
+
+
+
+@media (min-width: 48rem) {
+  body{
+    background-image: 
+          url("../images/bg-pattern-top-desktop.svg"),
+          url("../images/bg-pattern-bottom-desktop.svg");
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-top: 6.3125rem;
+    column-gap: 1.78rem;
+  }
+
+  .heading__header{
+    font-size: 3.375rem;
+    line-height: 3rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  .heading{
+    padding: 0;
+    width: 80%;
+  }
+
+  .heading__text{
+    text-align: left;
+    margin-top: .375rem;
+  }
+  
+}
